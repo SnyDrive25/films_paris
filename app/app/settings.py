@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-x76y)@=0wvyyr$s!(&@u7%q7(-ix4cs06@ys03#o50s%%=y=@)
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['.azurewebsites.net']
+ALLOWED_HOSTS = ['.azurewebsites.net', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

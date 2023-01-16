@@ -30,7 +30,7 @@ def accueil_view(request):
         ])
     context = {
         'result': dico,
-        'message': 'Bienvenu ! Pour rechercher un film, remplissez comme vous le souhaitez les cases suivantes puis appuyez sur le bouton rechercher ;)'
+        'message': 'Bienvenue ! Pour rechercher un film, remplissez comme vous le souhaitez les cases suivantes puis appuyez sur le bouton rechercher ;)'
     }
     return render(request, 'index.html', context)
 
