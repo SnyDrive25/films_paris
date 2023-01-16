@@ -1,0 +1,132 @@
+{% extends 'page.html' %}
+
+{% block titre %}
+    
+    Films à Paris
+
+{% endblock %}
+
+{% block h1 %}
+
+    <h1 class="title">Films à Paris</h1>
+
+{% endblock %}
+
+{% block contenu %}
+
+    <p>{{ message }}</p>
+
+    <form class="inputs" action="rechercher" method="post">
+        <input name="nom" placeholder="Nom"></input>
+        <input name="typ" placeholder="Type de tournage"></input>
+        <input name="prod" placeholder="Producteur"></input>
+        <input name="real" placeholder="Réalisateur"></input>
+        <input name="arron" placeholder="Arrondissement"></input>
+        <select name="annee">
+            <option selected disabled>Année</option>
+            <option>2016</option>
+            <option>2017</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option>2020</option>
+            <option>2021</option>
+        </select>
+        <div class="button-div">
+            <input class="button" type="submit" value="Rechercher"></input>
+        </div>
+    </form>
+
+    <table>
+        <tr>
+            <td>
+                id lieu
+            </td>
+            <td>
+                annee tournage
+            </td>
+            <td>
+                type tournage
+            </td>
+            <td>
+                nom tournage
+            </td>
+            <td>
+                nom réalisateur
+            </td>
+            <td>
+                nom producteur
+            </td>
+            <td>
+                adresse du lieu
+            </td>
+            <td>
+                arrondissement
+            </td>
+            <td>
+                date début
+            </td>
+            <td>
+                date fin
+            </td>
+            <td>
+                coord x
+            </td>
+            <td>
+                coord y
+            </td>
+            <td>
+                geo shape
+            </td>
+            <td>
+                geo point 2D
+            </td>
+        </tr>
+        {% for i in result %}
+            <tr>
+                <td>
+                    {{ i.0 }}
+                </td>
+                <td>
+                    {{ i.1 }}
+                </td>
+                <td>
+                    {{ i.2 }}
+                </td>
+                <td>
+                    {{ i.3 }}
+                </td>
+                <td>
+                    {{ i.4 }}
+                </td>
+                <td>
+                    {{ i.5 }}
+                </td>
+                <td>
+                    {{ i.6 }}
+                </td>
+                <td>
+                    {{ i.7 }}
+                </td>
+                <td>
+                    {{ i.8 }}
+                </td>
+                <td>
+                    {{ i.9 }}
+                </td>
+                <td>
+                    {{ i.10 }}
+                </td>
+                <td>
+                    {{ i.11 }}
+                </td>
+                <td>
+                    {{ i.12 }}
+                </td>
+                <td>
+                    {{ i.13 }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+        
+{% endblock %}
