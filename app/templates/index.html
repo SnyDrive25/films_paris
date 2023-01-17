@@ -39,6 +39,9 @@
     <table>
         <tr>
             <td>
+                Visiter
+            </td>
+            <td>
                 id lieu
             </td>
             <td>
@@ -82,7 +85,10 @@
             </td>
         </tr>
         {% for i in result %}
-            <tr>
+            <tr onclick="assombrir( '{{ i.0 }}' )" id="'{{ i.0 }}'">
+                <td class="visit">
+                    <a href="./{{ i.0 }}">Visiter</a>
+                </td>
                 <td>
                     {{ i.0 }}
                 </td>

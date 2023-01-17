@@ -96,3 +96,24 @@ def rechercher(request):
         'message': message
     }
     return render(request, 'index.html', context)
+
+
+@csrf_exempt
+def details(request, id):
+    titles = ['id_lieu','annee_tournage','type_tournage','nom_tournage','nom_realisateur','nom_producteur','adresse_lieu','ardt_lieu','date_debut','date_fin','coord_x','coord_y','geo_shape','geo_point_2d']
+    connexion = sqlite3.connect('./db.sqlite3')
+    c = connexion.cursor()
+    c.execute('SELECT * FROM films_paris WHERE id_lieu = "' + id + '" ORDER BY annee_tournage DESC')
+    result = c.fetchall()
+    c.close()
+    connexion.close()
+    if len(result) == 0:
+        message = 'Pas de données pour cette requête'
+    else:
+        message = ''
+    context = {
+        'result': zip(titles, result[0]),
+        'message': message,
+        'name': result[0][3]
+    }
+    return render(request, 'details.html', context)

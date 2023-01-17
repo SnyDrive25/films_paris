@@ -1,0 +1,32 @@
+{% extends 'page.html' %}
+
+{% block titre %}
+    
+    Films à Paris
+
+{% endblock %}
+
+{% block h1 %}
+
+    <h1 class="title">{{ name }}</h1>
+
+{% endblock %}
+
+{% block contenu %}
+
+    <p>{{ message }}</p>
+
+    <div class="carte">
+
+        {% for i,j in result %}
+            <div class="box">
+                <a class="info">{{ i }}</a>
+                 - 
+                {{ j }}
+            </div>
+        {% endfor %}
+        <div class="box"></div>
+
+    </div>
+
+{% endblock %}
