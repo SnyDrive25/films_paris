@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'leaflet',
 ]
 
 MIDDLEWARE = [
@@ -45,6 +46,10 @@ TEMPLATES = [
         },
     },
 ]
+
+LEAFLET_CONFIG = {
+    'SPATIAL_EXTENT': (2.12583007812, 48.8052465820, 2.56337890625, 48.9121453857)
+}
 
 WSGI_APPLICATION = 'app.wsgi.application'
 

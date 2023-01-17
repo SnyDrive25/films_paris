@@ -1,4 +1,5 @@
 {% load static %}
+{% load leaflet_tags %}
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -8,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="icon" href="{% static 'icon.png' %}">
     <title>{% block titre %} {% endblock %}</title>
+    {% leaflet_js %}
+    {% leaflet_css %}
   </head>
 
   <style>
@@ -433,7 +436,7 @@
     margin: 5vh;
     margin-left: auto;
     margin-right: auto;
-    padding: 2%;
+    padding: 0;
     background-color: var(--grey);
     display: flex;
     flex-wrap: wrap;
@@ -465,6 +468,15 @@
     text-decoration: underline;
     border-radius: 9px;
     font-style: normal;
+  }
+
+  #map {
+    height: 500px;
+    width: 100%;
+    border-radius: 0 0 9px 9px;
+    border: none;
+    margin: 0;
+    filter: sepia(.7) hue-rotate(185deg) brightness(.9) saturate(2) opacity(.9);
   }
 
   </style>

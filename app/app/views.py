@@ -114,6 +114,7 @@ def details(request, id):
     context = {
         'result': zip(titles, result[0]),
         'message': message,
-        'name': result[0][3]
+        'name': result[0][3],
+        'coord': [float(json.loads(result[0][13])["lon"]), float(json.loads(result[0][13])["lat"])]
     }
     return render(request, 'details.html', context)
