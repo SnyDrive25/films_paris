@@ -61,7 +61,7 @@ def rechercher(request):
                 first = False
             else:
                 requete += ' AND '
-            requete += ' ' + titles[i] + ' = "' + value + '" COLLATE NOCASE'
+            requete += ' ' + titles[i] + ' LIKE "' + value + '" COLLATE NOCASE'
     
     connexion = sqlite3.connect('./db.sqlite3')
     c = connexion.cursor()
