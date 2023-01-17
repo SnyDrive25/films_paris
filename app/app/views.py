@@ -61,7 +61,7 @@ def rechercher(request):
                 first = False
             else:
                 requete += ' AND '
-            requete += ' ' + titles[i] + ' LIKE "' + value + '" COLLATE NOCASE'
+            requete += ' ' + titles[i] + ' COLLATE Latin1_General_CI COLLATE NOCASE LIKE "%' + value + '%" COLLATE Latin1_General_CI COLLATE NOCASE'
     
     connexion = sqlite3.connect('./db.sqlite3')
     c = connexion.cursor()
@@ -115,6 +115,6 @@ def details(request, id):
         'result': zip(titles, result[0]),
         'message': message,
         'name': result[0][3],
-        'coord': [float(json.loads(result[0][13])["lon"]), float(json.loads(result[0][13])["lat"])]
+        'coord': [result[0][10], result[0][11]]
     }
     return render(request, 'details.html', context)
