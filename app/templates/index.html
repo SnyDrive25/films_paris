@@ -36,51 +36,59 @@
         </div>
     </form>
 
+    <script>
+
+        function sort(param) {
+            console.log(param);
+        }
+
+    </script>
+
     <table>
         <tr>
             <td>
                 Visiter
             </td>
-            <td>
+            <td onclick="sort('id_lieu')">
                 id lieu
             </td>
-            <td>
+            <td onclick="sort('annee_tournage')">
                 annee tournage
             </td>
-            <td>
+            <td onclick="sort('type_tournage')">
                 type tournage
             </td>
-            <td>
+            <td onclick="sort('nom_tournage')">
                 nom tournage
             </td>
-            <td>
+            <td onclick="sort('nom_realisateur')">
                 nom réalisateur
             </td>
-            <td>
+            <td onclick="sort('nom_producteur')">
                 nom producteur
             </td>
-            <td>
+            <td onclick="sort('adresse_lieu')">
                 adresse du lieu
             </td>
-            <td>
+            <td onclick="sort('ardt_lieu')">
                 arrondissement
             </td>
-            <td>
+            <td onclick="sort('date_debut')">
                 date début
             </td>
-            <td>
+            <td onclick="sort('date_fin')">
                 date fin
             </td>
-            <td>
+            <td onclick="sort('coord_x')">
                 coord x
             </td>
-            <td>
+            <td onclick="sort('coord_y')">
                 coord y
             </td>
-            <td>
+            <td onclick="sort('geo_shape')">
                 geo shape
             </td>
-            <td>
+            <td onclick="sort('geo_point_2d')">
                 geo point 2D
             </td>
         </tr>
