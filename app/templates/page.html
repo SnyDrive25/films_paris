@@ -16,12 +16,12 @@
   <style>
 
 :root {
-    --main: #b9a0a3;
-    --black: #161616;
-    --dark: rgb(28,28,28,.1);
-    --light-grey: #7979ff;
-    --grey: slateblue;
-    --light: #f9f8e6;
+    --main: #5c65c0;
+    --black: #1c0b2b;
+    --dark: #413b6b;
+    --light-grey: #301c41;
+    --grey: #5c65c0;
+    --light: #6f95ff;
   }
 
   ::-moz-selection
@@ -44,6 +44,7 @@
     overflow-x: hidden;
     color: var(--light);
     background-color: var(--main);
+    padding-bottom: 9vh;
   }
 
   a, p, span, td {
@@ -74,7 +75,7 @@
   }
 
   h1 {
-    color: var(--grey);
+    color: var(--light);
   }
 
   span {
@@ -261,7 +262,6 @@
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 17vh;
     flex-direction: column;
     flex-wrap: wrap;
   }
@@ -286,22 +286,53 @@
 
     .inputs {
       text-align: center !important;
-      margin-top: 44vh;
+      margin-top: 28vh;
     }
 
     h1 {
         font-size: 2em;
       }
-    
+      
+    .box {
+      margin: 0;
+      background-color: transparent;
+    }
+
   }
 
   @media only screen and (min-width: 600px) {
 
+    .inputs {
+      margin-top: 15vh;
+    }
+
     h1 {
         font-size: 3em;
       }
+      
+    .box {
+      margin: 25px;
+      background-color: var(--dark);
+      box-shadow: 0 0 .7em var(--dark);
+      border-radius: 9px;
+      padding: 9px;
+    }
     
   }
+
+  .fix {
+      position: fixed;
+      bottom: 17px;
+      left: 9.5%;
+      width: 81%;
+      line-height: 250%;
+      color: var(--light);
+      background-color: var(--main);
+      box-shadow: 0 0 2em var(--dark);
+      font-size: 1.7em;
+      text-align: center;
+      border-radius: 9px;
+    }
 
   select {
     width: 244px !important;
@@ -438,22 +469,18 @@
     margin-right: auto;
     padding: 0;
     background-color: var(--grey);
+    box-shadow: 0 0 2em var(--dark);
     display: flex;
     flex-wrap: wrap;
     line-height: 250% !important;
   }
 
   .box {
-    margin: 25px;
     margin-left: auto;
     margin-right: auto;
     height: auto;
     width: 400px;
     max-width: 95%;
-    border-radius: 9px;
-    padding: 9px;
-    background-color: var(--dark);
-    box-shadow: 0 0 .7em var(--dark);
   }
 
   .box:last-child {
